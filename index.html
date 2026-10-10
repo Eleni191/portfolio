@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <title>Eleni — Portfolio</title>
+    </head>
+    <body>
+
+        <nav class="navbar">
+            <div class="logo">Eleni</div>
+
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="#about">About</a>
+                <a href="projects.html">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button id="themeBtn">🌙</button>
+            <button>Download CV</button>
+        </nav>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="greeting">HELLO, I'M ELENI</p>
+
+                <h1>Computer Science Student</h1>
+
+                <p class="description">
+                    I love solving problems, building websites,
+                    and learning new technologies.
+                </p>
+
+                <div class="hero-buttons">
+                    <button id="contactBtn">Contact Me</button>
+                    <button class="btn1">View Projects</button>
+                </div>
+
+                <div class="hero-skills">
+                    <span>Frontend</span>
+                    <span>Backend</span>
+                    <span>Problem Solving</span>
+                </div>
+
+            </div>
+
+            <div class="hero-panel">
+                <div class="hero-panel-row">
+                    <span class="label">Year</span>
+                    <span class="value">3rd Year</span>
+                </div>
+                <div class="hero-panel-row">
+                    <span class="label">Studying</span>
+                    <span class="value">Computer Science</span>
+                </div>
+                <div class="hero-panel-row">
+                    <span class="label">Focus</span>
+                    <span class="value">Frontend &amp; Backend</span>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="about" id="about">
+
+            <div class="frame">
+                <img src="im copy.png" alt="About me">
+            </div>
+
+            <div class="about-content">
+
+                <h2>About Me</h2>
+
+                <p>
+                    I'm a Computer Science student who enjoys
+                    solving problems and building websites.
+                    I like learning by creating real projects
+                    and exploring new technologies.
+                </p>
+
+                <p>
+                    Currently, I'm focusing on frontend and
+                    backend development and improving my
+                    problem-solving skills.
+                </p>
+
+                <button>Let's Connect</button>
+
+            </div>
+
+        </section>
+<section class="projects">
+
+    <div class="section-heading">
+        <h2>My Projects</h2>
+        <p class="section-sub">A few things I've built while learning to code.</p>
+    </div>
+
+    <div class="cards">
+
+        <article class="card">
+            <span class="card-tag">Desktop App</span>
+            <h3>Restaurant Ordering System</h3>
+            <p>A Java desktop application built with JavaFX, featuring customer ordering,waiter approval, and manager oversight.</p>
+            <p class="card-stack">Java · JavaFX · MySQL · OOP </p>
+            <a href="#" class="card-link">View project</a>
+        </article>
+
+        <article class="card">
+            <span class="card-tag">Backend Application</span>
+            <h3>Employee Registration System</h3>
+            <p>Developed a backend Employee Registration System using C++ and MySQL to register, store, retrieve, and manage employee records efficiently.</p>
+            <p class="card-stack">C++ · MySQL </p>
+            <a href="#" class="card-link">View project</a>
+        </article>
+
+        <article class="card">
+            <span class="card-tag">Frontend</span>
+            <h3>Portfolio</h3>
+            <p>A personal portfolio website.</p>
+            <p class="card-stack">HTML · CSS · JavaScript · Responsive</p>
+            <a href="#" class="card-link">View project</a>
+        </article>
+
+    </div>
+
+    <div class="view-more">
+        <a href="projects.html" class="btn1 view-more-btn">View more projects</a>
+    </div>
+
+</section>
+
+        <section class="contact" id="contact">
+
+            <div class="contact-intro">
+                <h2>Get in touch</h2>
+                <p>
+                    Have a project in mind or just want to say hi?
+                    Send a message and I'll get back to you soon.
+                </p>
+                <a href="mailto:elenumulugeta69@gmail.com" class="contact-email">elenumulugeta69@gmail.com</a>
+            </div>
+
+            <form id="contact" class="contact-form">
+                <div class="field-row">
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="you@email.com" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+
+        </section>
+<div id="container">
+
+</div>
+        <footer class="site-footer">
+            <span>2026 Eleni mulugeta</span>
+            <span>elenumulugeta69@gmail.com</span>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>
