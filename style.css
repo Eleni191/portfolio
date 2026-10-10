@@ -70,6 +70,50 @@ a { color: inherit; }
 .links a:hover {
     color: var(--accent);
 }
+.links-cv {
+    display: none;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* hamburger button (hidden on desktop) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: transparent;
+    border: 1.5px solid var(--line);
+}
+.menu-toggle:hover {
+    background: transparent;
+    border-color: var(--accent);
+}
+.menu-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: var(--ink);
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
 
 /* ---------- Buttons ---------- */
 
@@ -278,9 +322,6 @@ section {
     color: var(--muted);
     font-size: 15px;
 }
-.active{
-    color: white;
-}
 
 .cards {
     display: grid;
@@ -367,7 +408,7 @@ section {
     margin-bottom: 6px;
 }
 
-/* NEW: colored "built with" line */
+/* colored "built with" line */
 .card p.card-stack {
     color: var(--accent);
     font-weight: 700;
@@ -386,12 +427,6 @@ section {
 .card-link:hover {
     color: #e6b660;
     border-color: #e6b660;
-}
-.card p.card-stack {
-    color: var(--accent);
-    font-weight: 700;
-    font-size: 14px;
-    margin-bottom: 10px;
 }
 
 /* ---------- Contact ---------- */
@@ -518,11 +553,52 @@ section {
     .cards {
         grid-template-columns: 1fr;
     }
-    .navbar, .hero, .about, .projects, .contact, .site-footer {
+    .navbar, .hero, .about, .projects, .contact, .site-footer,
+    .page-header, .projects-full {
         padding-left: 30px;
         padding-right: 30px;
     }
     .frame {
         align-self: center;
+    }
+
+    /* ----- mobile navbar ----- */
+    .navbar {
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    .cv-desktop {
+        display: none;
+    }
+    .links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        gap: 0;
+        padding: 6px 30px 18px;
+        background-color: var(--bg);
+        border-bottom: 1px solid var(--line);
+    }
+    .links.open {
+        display: flex;
+    }
+    .links a {
+        padding: 14px 0;
+        font-size: 16px;
+        border-bottom: 1px solid var(--line);
+    }
+    .links a:last-child {
+        border-bottom: none;
+    }
+    .links .links-cv {
+        display: block;
+        color: var(--accent);
+        font-weight: 700;
     }
 }

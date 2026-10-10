@@ -7,6 +7,12 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+        <script>
+            /* apply saved theme before the page paints (no flash) */
+            if (localStorage.getItem("theme") === "light") {
+                document.documentElement.classList.add("light-mode");
+            }
+        </script>
         <title>Eleni — Portfolio</title>
     </head>
     <body>
@@ -14,14 +20,23 @@
         <nav class="navbar">
             <div class="logo">Eleni</div>
 
-            <div class="links">
+            <div class="links" id="navLinks">
                 <a href="index.html">Home</a>
                 <a href="#about">About</a>
                 <a href="projects.html">Projects</a>
                 <a href="#contact">Contact</a>
+                <a href="#" class="links-cv">Download CV</a>
             </div>
-            <button id="themeBtn">🌙</button>
-            <button>Download CV</button>
+
+            <div class="nav-actions">
+                <button id="themeBtn" aria-label="Toggle theme">🌙</button>
+                <button class="cv-desktop">Download CV</button>
+                <button id="menuBtn" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </nav>
 
         <section class="hero">
@@ -90,51 +105,52 @@
                     problem-solving skills.
                 </p>
 
-                <button>Let's Connect</button>
+                <button id="connectBtn">Let's Connect</button>
 
             </div>
 
         </section>
-<section class="projects">
 
-    <div class="section-heading">
-        <h2>My Projects</h2>
-        <p class="section-sub">A few things I've built while learning to code.</p>
-    </div>
+        <section class="projects">
 
-    <div class="cards">
+            <div class="section-heading">
+                <h2>My Projects</h2>
+                <p class="section-sub">A few things I've built while learning to code.</p>
+            </div>
 
-        <article class="card">
-            <span class="card-tag">Desktop App</span>
-            <h3>Restaurant Ordering System</h3>
-            <p>A Java desktop application built with JavaFX, featuring customer ordering,waiter approval, and manager oversight.</p>
-            <p class="card-stack">Java · JavaFX · MySQL · OOP </p>
-            <a href="#" class="card-link">View project</a>
-        </article>
+            <div class="cards">
 
-        <article class="card">
-            <span class="card-tag">Backend Application</span>
-            <h3>Employee Registration System</h3>
-            <p>Developed a backend Employee Registration System using C++ and MySQL to register, store, retrieve, and manage employee records efficiently.</p>
-            <p class="card-stack">C++ · MySQL </p>
-            <a href="#" class="card-link">View project</a>
-        </article>
+                <article class="card">
+                    <span class="card-tag">Desktop App</span>
+                    <h3>Restaurant Ordering System</h3>
+                    <p>A Java desktop application built with JavaFX, featuring customer ordering, waiter approval, and manager oversight.</p>
+                    <p class="card-stack">Java · JavaFX · MySQL · OOP</p>
+                    <a href="#" class="card-link">View project</a>
+                </article>
 
-        <article class="card">
-            <span class="card-tag">Frontend</span>
-            <h3>Portfolio</h3>
-            <p>A personal portfolio website.</p>
-            <p class="card-stack">HTML · CSS · JavaScript · Responsive</p>
-            <a href="#" class="card-link">View project</a>
-        </article>
+                <article class="card">
+                    <span class="card-tag">Backend Application</span>
+                    <h3>Employee Registration System</h3>
+                    <p>Developed a backend Employee Registration System using C++ and MySQL to register, store, retrieve, and manage employee records efficiently.</p>
+                    <p class="card-stack">C++ · MySQL</p>
+                    <a href="#" class="card-link">View project</a>
+                </article>
 
-    </div>
+                <article class="card">
+                    <span class="card-tag">Frontend</span>
+                    <h3>Portfolio</h3>
+                    <p>A personal portfolio website.</p>
+                    <p class="card-stack">HTML · CSS · JavaScript · Responsive</p>
+                    <a href="#" class="card-link">View project</a>
+                </article>
 
-    <div class="view-more">
-        <a href="projects.html" class="btn1 view-more-btn">View more projects</a>
-    </div>
+            </div>
 
-</section>
+            <div class="view-more">
+                <a href="projects.html" class="btn1 view-more-btn">View more projects</a>
+            </div>
+
+        </section>
 
         <section class="contact" id="contact">
 
@@ -144,10 +160,10 @@
                     Have a project in mind or just want to say hi?
                     Send a message and I'll get back to you soon.
                 </p>
-                <a href="mailto:elenumulugeta69@gmail.com" class="contact-email">elenumulugeta69@gmail.com</a>
+                <a href="mailto:elenimulugeta69@gmail.com" class="contact-email">elenimulugeta69@gmail.com</a>
             </div>
 
-            <form id="contact" class="contact-form">
+            <form id="contactForm" class="contact-form">
                 <div class="field-row">
                     <div class="field">
                         <label for="name">Name</label>
@@ -166,12 +182,10 @@
             </form>
 
         </section>
-<div id="container">
 
-</div>
         <footer class="site-footer">
             <span>2026 Eleni mulugeta</span>
-            <span>elenumulugeta69@gmail.com</span>
+            <span>elenimulugeta69@gmail.com</span>
         </footer>
 
         <script src="script.js"></script>

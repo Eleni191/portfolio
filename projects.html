@@ -7,6 +7,12 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+        <script>
+            /* apply saved theme before the page paints (no flash) */
+            if (localStorage.getItem("theme") === "light") {
+                document.documentElement.classList.add("light-mode");
+            }
+        </script>
         <title>Projects — Eleni</title>
     </head>
     <body>
@@ -14,13 +20,23 @@
         <nav class="navbar">
             <a href="index.html" class="logo" style="text-decoration:none;">Eleni</a>
 
-            <div class="links">
+            <div class="links" id="navLinks">
                 <a href="index.html">Home</a>
                 <a href="index.html#about">About</a>
                 <a href="projects.html">Projects</a>
                 <a href="index.html#contact">Contact</a>
+                <a href="#" class="links-cv">Download CV</a>
             </div>
-            <button>Download CV</button>
+
+            <div class="nav-actions">
+                <button id="themeBtn" aria-label="Toggle theme">🌙</button>
+                <button class="cv-desktop">Download CV</button>
+                <button id="menuBtn" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </nav>
 
         <header class="page-header">
@@ -39,25 +55,25 @@
                 <article class="card">
                     <span class="card-tag">Desktop App</span>
                     <h3>Restaurant Ordering System</h3>
-                    <p>A Java desktop application built with JavaFX, featuring customer ordering,waiter approval, and manager oversight.</p>
-                  <p class="card-stack">Java · JavaFX · MySQL · OOP </p>
+                    <p>A Java desktop application built with JavaFX, featuring customer ordering, waiter approval, and manager oversight.</p>
+                    <p class="card-stack">Java · JavaFX · MySQL · OOP</p>
                     <a href="#" class="card-link">View project</a>
                 </article>
 
                 <article class="card">
                     <span class="card-tag">Backend Application</span>
-            <h3>Employee Registration System</h3>
-            <p>Developed a backend Employee Registration System using C++ and MySQL to register, store, retrieve, and manage employee records efficiently.</p>
-            <p class="card-stack">C++ · MySQL </p>
-            <a href="#" class="card-link">View project</a>
+                    <h3>Employee Registration System</h3>
+                    <p>Developed a backend Employee Registration System using C++ and MySQL to register, store, retrieve, and manage employee records efficiently.</p>
+                    <p class="card-stack">C++ · MySQL</p>
+                    <a href="#" class="card-link">View project</a>
                 </article>
 
                 <article class="card">
                     <span class="card-tag">Frontend</span>
-            <h3>Portfolio</h3>
-            <p>A personal portfolio website.</p>
-            <p class="card-stack">HTML · CSS · JavaScript · Responsive</p>
-            <a href="#" class="card-link">View project</a>
+                    <h3>Portfolio</h3>
+                    <p>A personal portfolio website.</p>
+                    <p class="card-stack">HTML · CSS · JavaScript · Responsive</p>
+                    <a href="#" class="card-link">View project</a>
                 </article>
 
                 <article class="card">
@@ -69,14 +85,12 @@
                 </article>
 
                 <article class="card">
-                    <span class="card-tag">Full-stack Web App- In Progress</span>
+                    <span class="card-tag">Full-stack Web App - In Progress</span>
                     <h3>Travel Planner</h3>
                     <p>A travel planning web application designed to help users explore destinations and organize their trips, with a PHP backend currently in development.</p>
- <p class="card-stack">HTML · CSS · JavaScript · Laravel · MySQL</p>
+                    <p class="card-stack">HTML · CSS · JavaScript · Laravel · MySQL</p>
                     <a href="#" class="card-link">View project</a>
                 </article>
-
-               
 
             </div>
 
@@ -87,5 +101,6 @@
             <span>elenumulugeta69@gmail.com</span>
         </footer>
 
+        <script src="script.js"></script>
     </body>
 </html>
