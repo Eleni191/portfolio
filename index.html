@@ -7,12 +7,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
-        <script>
-            /* apply saved theme before the page paints (no flash) */
-            if (localStorage.getItem("theme") === "light") {
-                document.documentElement.classList.add("light-mode");
-            }
-        </script>
+     
         <title>Eleni — Portfolio</title>
     </head>
     <body>
@@ -29,12 +24,13 @@
             </div>
 
             <div class="nav-actions">
-                <button id="themeBtn" aria-label="Toggle theme">🌙</button>
+                <button id="themeBtn">🌙</button>
                 <button class="cv-desktop">Download CV</button>
                 <button id="menuBtn" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
+        
                 </button>
             </div>
         </nav>
@@ -125,7 +121,7 @@
                     <h3>Restaurant Ordering System</h3>
                     <p>A Java desktop application built with JavaFX, featuring customer ordering, waiter approval, and manager oversight.</p>
                     <p class="card-stack">Java · JavaFX · MySQL · OOP</p>
-                    <a href="#" class="card-link">View project</a>
+                    <a href="https://github.com/Eleni191/ordering_system" class="card-link">View project</a>
                 </article>
 
                 <article class="card">
@@ -187,7 +183,7 @@
             <span>2026 Eleni mulugeta</span>
             <span>elenimulugeta69@gmail.com</span>
         </footer>
-
+<button id="backToTop" aria-label="Back to top">↑</button>
         <script src="script.js"></script>
     </body>
 </html>
