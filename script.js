@@ -85,3 +85,35 @@ backToTop.addEventListener("click", function () {
         behavior: "smooth"
     });
 });
+
+const form = document.getElementById("contactForm");
+const statusEl = document.getElementById("formStatus");
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector(".submit-btn");
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+    statusEl.textContent = "";
+
+    try {
+        const res = await fetch(form.action, {
+            method: "POST",
+            body: new FormData(form),
+            headers: { Accept: "application/json" }
+        });
+        if (res.ok) {
+            statusEl.textContent = "Thanks! Your message has been sent.";
+            statusEl.className = "form-status success";
+            form.reset();
+        } else {
+            throw new Error("Request failed");
+        }
+    } catch (err) {
+        statusEl.textContent = "Something went wrong. Please try again or email me directly.";
+        statusEl.className = "form-status error";
+    } finally {
+        btn.disabled = false;
+        btn.textContent = "Send Message";
+    }
+});
