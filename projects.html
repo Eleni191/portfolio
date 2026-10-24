@@ -1,106 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-        <script>
-            /* apply saved theme before the page paints (no flash) */
-            if (localStorage.getItem("theme") === "light") {
-                document.documentElement.classList.add("light-mode");
-            }
-        </script>
-        <title>Projects — Eleni</title>
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        /* apply saved theme before the page paints (no flash) */
+        if (localStorage.getItem("theme") === "light") {
+            document.documentElement.classList.add("light-mode");
+        }
+    </script>
+    <title>Projects — Eleni</title>
+</head>
+<body>
 
-        <nav class="navbar">
-            <a href="index.html" class="logo" style="text-decoration:none;">Eleni</a>
+<nav class="navbar">
+    <a href="index.html" class="logo" style="text-decoration:none;">Eleni</a>
+    <div class="links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="cv.pdf" download class="links-cv">Download CV</a>
+    </div>
+    <div class="nav-actions">
+        <button id="themeBtn" aria-label="Toggle theme">🌙</button>
+        <button class="cv-desktop" id="cvBtn">Download CV</button>
+        <button id="menuBtn" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
 
-            <div class="links" id="navLinks">
-                <a href="index.html">Home</a>
-                <a href="index.html#about">About</a>
-                <a href="projects.html">Projects</a>
-                <a href="index.html#contact">Contact</a>
-                <a href="#" class="links-cv">Download CV</a>
-            </div>
+<header class="page-header">
+    <span class="greeting">MY WORK</span>
+    <h1>All Projects</h1>
+    <p>Everything here started as a way to practice something new — a language, a framework, or just a problem I wanted to solve.</p>
+</header>
 
-            <div class="nav-actions">
-                <button id="themeBtn" aria-label="Toggle theme">🌙</button>
-                <button class="cv-desktop">Download CV</button>
-                <button id="menuBtn" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </nav>
+<section class="projects-full">
+    <div class="cards">
 
-        <header class="page-header">
-            <span class="greeting">MY WORK</span>
-            <h1>All Projects</h1>
-            <p>
-                Everything here started as a way to practice something new —
-                a language, a framework, or just a problem I wanted to solve.
-            </p>
-        </header>
-
-        <section class="projects-full">
-
-            <div class="cards">
-
-                <article class="card">
-                    <span class="card-tag">Desktop App</span>
-                    <h3>Restaurant Ordering System</h3>
-                    <p>A Java desktop application built with JavaFX, featuring customer ordering, waiter approval, and manager oversight.</p>
-                    <p class="card-stack">Java · JavaFX · MySQL · OOP</p>
-                    <a href="#" class="card-link">View project</a>
+                <article class="card t1">
+                    <div class="card-thumb">
+                        <div class="ph">Aurum</div>
+                        <img src="pic.png" alt="Restaurant Ordering System screenshot" loading="lazy" onerror="this.remove()">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">Desktop App</span>
+                        <h3>Restaurant Ordering System</h3>
+                        <p>A JavaFX desktop app with customer ordering, waiter approval, and manager oversight.</p>
+                        <div class="card-stack"><span>Java</span><span>JavaFX</span><span>MySQL</span><span>OOP</span></div>
+                        <a href="https://github.com/Eleni191/ordering_system" class="card-link">View project</a>
+                    </div>
                 </article>
 
-                <article class="card">
-                    <span class="card-tag">Backend Application</span>
-                    <h3>Employee Registration System</h3>
-                    <p>Developed a backend Employee Registration System using C++ and MySQL to register, store, retrieve, and manage employee records efficiently.</p>
-                    <p class="card-stack">C++ · MySQL</p>
-                    <a href="#" class="card-link">View project</a>
+                <article class="card t2">
+                    <div class="card-thumb">
+                        <div class="ph">C++</div>
+                        <img src="job.png" alt="Employee Registration System screenshot" loading="lazy" onerror="this.remove()">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">Backend Application</span>
+                        <h3>Employee Registration System</h3>
+                        <p>Registers, stores, retrieves, and manages employee records using C++ and MySQL.</p>
+                        <div class="card-stack"><span>C++</span><span>MySQL</span></div>
+                        <a href="#" class="card-link">View project</a>
+                    </div>
                 </article>
 
-                <article class="card">
-                    <span class="card-tag">Frontend</span>
-                    <h3>Portfolio</h3>
-                    <p>A personal portfolio website.</p>
-                    <p class="card-stack">HTML · CSS · JavaScript · Responsive</p>
-                    <a href="#" class="card-link">View project</a>
+                <article class="card t5">
+                    <div class="card-thumb">
+                        <div class="ph">Eleni</div>
+                        <img src="images/portfolio.png" alt="Portfolio screenshot" loading="lazy" onerror="this.remove()">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">Frontend</span>
+                        <h3>Portfolio</h3>
+                        <p>My personal portfolio website, with a light and dark theme.</p>
+                        <div class="card-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive</span></div>
+                        <a href="#" class="card-link">View project</a>
+                    </div>
                 </article>
 
-                <article class="card">
-                    <span class="card-tag">Backend Application</span>
-                    <h3>Hotel Management System</h3>
-                    <p>A hotel management application built with C++, SQL Server, and ODBC for managing hotel data and database operations.</p>
-                    <p class="card-stack">C++ · SQL Server · ODBC</p>
-                    <a href="#" class="card-link">View project</a>
+                <article class="card t6">
+                    <div class="card-thumb">
+                        <div class="ph">Hotel</div>
+                        <img src="pic.png" alt="Hotel Management System screenshot" loading="lazy" onerror="this.remove()">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">Backend Application</span>
+                        <h3>Hotel Management System</h3>
+                        <p>A hotel management app built with C++, SQL Server, and ODBC for hotel data and database operations.</p>
+                        <div class="card-stack"><span>C++</span><span>SQL Server</span><span>ODBC</span></div>
+                        <a href="#" class="card-link">View project</a>
+                    </div>
                 </article>
 
-                <article class="card">
-                    <span class="card-tag">Full-stack Web App - In Progress</span>
-                    <h3>Travel Planner</h3>
-                    <p>A travel planning web application designed to help users explore destinations and organize their trips, with a PHP backend currently in development.</p>
-                    <p class="card-stack">HTML · CSS · JavaScript · Laravel · MySQL</p>
-                    <a href="#" class="card-link">View project</a>
+                <article class="card t7">
+                    <div class="card-thumb">
+                        <div class="ph">Travel</div>
+                        <img src="plane.png" alt="Travel Planner screenshot" loading="lazy" onerror="this.remove()">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">Full-stack Web App · In Progress</span>
+                        <h3>Travel Planner</h3>
+                        <p>A travel planning web app to explore destinations and organize trips, with a PHP backend in development.</p>
+                        <div class="card-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Laravel</span><span>MySQL</span></div>
+                        <a href="#" class="card-link">View project</a>
+                    </div>
                 </article>
 
-            </div>
+                <article class="card t3">
+                    <div class="card-thumb">
+                        <div class="ph">Sunrise</div>
+                        <img src="hotel.png" alt="Sunrise Hotel Website screenshot" loading="lazy" onerror="this.remove()">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">Frontend Development</span>
+                        <h3>Sunrise Hotel Website</h3>
+                        <p>A responsive hotel site where guests explore rooms and book, plus an admin dashboard for bookings.</p>
+                        <div class="card-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive</span></div>
+                        <a href="https://sunrisehotels.netlify.app" class="card-link">View project</a>
+                    </div>
+                </article>
 
-        </section>
+                <article class="card t4">
+                    <div class="card-thumb">
+                        <div class="ph">Heran</div>
+                        <img src="cake.png" alt="Heran Cafe Website screenshot" loading="lazy" onerror="this.remove()">
+                    </div>
+                    <div class="card-body">
+                        <span class="card-tag">Frontend Development</span>
+                        <h3>Heran Cafe Website</h3>
+                        <p>A warm, responsive cafe website with a home page and a full menu with prices.</p>
+                        <div class="card-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                        <a href="#" class="card-link">View project</a>
+                    </div>
+                </article>
 
-        <footer class="site-footer">
-            <span>2026 Eleni mulugeta</span>
-            <span>elenumulugeta69@gmail.com</span>
-        </footer>
+    </div>
+</section>
 
-        <script src="script.js"></script>
-    </body>
+<footer class="site-footer">
+    <span>© 2026 Eleni Mulugeta</span>
+    <span>elenimulugeta69@gmail.com</span>
+</footer>
+
+<button id="backToTop" aria-label="Back to top">↑</button>
+<script src="script.js"></script>
+</body>
 </html>
