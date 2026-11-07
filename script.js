@@ -92,3 +92,77 @@ if (form) {
         }
     });
 }
+
+/* ---------- Scroll reveal ---------- */
+(function () {
+  // left side
+  document.querySelectorAll('.hero-content, .frame, .contact-intro')
+    .forEach(el => el.classList.add('reveal-left'));
+
+  // right side
+  document.querySelectorAll('.hero-panel, .about-content, .contact-form')
+    .forEach(el => el.classList.add('reveal-right'));
+
+  // boxes from the top, staggered one after another
+  document.querySelectorAll('.cards, .svc-grid, .poster-grid, .stats-strip, .about-facts')
+    .forEach(group => {
+      [...group.children].forEach((box, i) => {
+        box.classList.add('reveal-top');
+        box.style.setProperty('--d', (i * 0.12) + 's');
+      });
+    });
+
+  // section headings also from the top
+  document.querySelectorAll('.section-heading')
+    .forEach(el => el.classList.add('reveal-top'));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        io.unobserve(entry.target); // play once
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal-left, .reveal-right, .reveal-top')
+    .forEach(el => io.observe(el));
+})();
+
+
+/* ---------- Count-up stats ---------- */
+(function () {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseInt(el.textContent, 10);
+      const suffix = el.textContent.replace(/[0-9]/g, '');
+      const start = performance.now(), dur = 1400;
+      (function tick(now) {
+        const p = Math.min((now - start) / dur, 1);
+        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      })(start);
+      io.unobserve(el);
+    });
+  }, { threshold: 0.6 });
+  document.querySelectorAll('.stat-num').forEach(n => io.observe(n));
+})();
+
+/* ---------- Poster lightbox ---------- */
+(function () {
+  const box = document.createElement('div');
+  box.className = 'lightbox';
+  box.innerHTML = '<img alt=""><button aria-label="Close">✕</button>';
+  document.body.appendChild(box);
+  const img = box.querySelector('img');
+  const close = () => box.classList.remove('open');
+
+  document.querySelectorAll('.poster-img img').forEach(p => {
+    p.style.cursor = 'zoom-in';
+    p.addEventListener('click', () => { img.src = p.src; img.alt = p.alt; box.classList.add('open'); });
+  });
+  box.addEventListener('click', e => { if (e.target !== img) close(); });
+  addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+})();

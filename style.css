@@ -14,6 +14,53 @@ html{
     scroll-behavior:smooth;
     scroll-padding-top:80px
 }
+/* ---------- Scroll reveal ---------- */
+body { overflow-x: clip; } /* stops sideways scrollbar while things slide in */
+
+.reveal-left,
+.reveal-right,
+.reveal-top { opacity: 0; }
+
+.reveal-left.in-view  { animation: fromLeft  .8s cubic-bezier(.2,.7,.2,1) var(--d, 0s) backwards; opacity: 1; }
+.reveal-right.in-view { animation: fromRight .8s cubic-bezier(.2,.7,.2,1) var(--d, 0s) backwards; opacity: 1; }
+.reveal-top.in-view   { animation: fromTop   .7s cubic-bezier(.2,.7,.2,1) var(--d, 0s) backwards; opacity: 1; }
+
+@keyframes fromLeft  { from { opacity: 0; transform: translateX(-70px); } to { opacity: 1; transform: none; } }
+@keyframes fromRight { from { opacity: 0; transform: translateX(70px);  } to { opacity: 1; transform: none; } }
+@keyframes fromTop   { from { opacity: 0; transform: translateY(-50px); } to { opacity: 1; transform: none; } }
+
+/* people who prefer no motion just see everything */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-left, .reveal-right, .reveal-top { opacity: 1; }
+}
+#progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--accent); z-index: 100; }
+.links a.active { color: var(--accent); }
+.lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.88); display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity .25s; z-index: 2000; }
+.lightbox.open { opacity: 1; pointer-events: auto; }
+.lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 10px; box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+.lightbox button { position: absolute; top: 20px; right: 20px; width: 44px; height: 44px; padding: 0; border-radius: 50%; }
+/* ---------- Remove section divider lines ---------- */
+.navbar,
+.hero,
+.stats-strip,
+.about,
+.design,
+.contact,
+.site-footer,
+.page-header {
+    border-top: none;
+    border-bottom: none;
+}
+
+/* vertical lines between the 3 stats */
+.stat + .stat {
+    border-left: none;
+}
+.hero-panel-row { border-bottom: none; }
+.links a { border-bottom: none; }
+
+
+
 body{
     background:var(--bg);
     font-family:var(--fb);
@@ -539,3 +586,6 @@ section{min-height:60vh}
 .site-footer span{overflow-wrap:anywhere}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.design {
+    border-top: none !important;
+}
