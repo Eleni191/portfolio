@@ -12,40 +12,40 @@ function Design() {
 
         <article class="poster">
             <div class="poster-img">
-                <img src="/public/images/web.jpg" alt="Poster 1" loading="lazy"/>
+                <img src="/images/bus.jpg" alt="Poster 1" loading="lazy"/>
             </div>
             <div class="poster-info">
-                <h3>Poster Title</h3>
+                <h3>Alpha Realstate</h3>
+                <span class="card-tag">Business Card</span>
+            </div>
+        </article>
+
+        <article class="poster">
+            <div class="poster-img">
+                <img src="/images/po.jpg" alt="Poster 2" loading="lazy"/>
+            </div>
+            <div class="poster-info">
+                <h3>Maya Coffee</h3>
                 <span class="card-tag">Poster</span>
             </div>
         </article>
 
         <article class="poster">
             <div class="poster-img">
-                <img src="/public/images/po.jpg" alt="Poster 2" loading="lazy"/>
+                <img src="/images/bed.jpg" alt="Poster 3" loading="lazy"/>
             </div>
             <div class="poster-info">
-                <h3>Poster Title</h3>
+                <h3>Furniture Poster</h3>
                 <span class="card-tag">Poster</span>
             </div>
         </article>
 
         <article class="poster">
             <div class="poster-img">
-                <img src="d.png" alt="Poster 3" loading="lazy"/>
+                <img src="/images/co.jpg" alt="Poster 4" loading="lazy"/>
             </div>
             <div class="poster-info">
-                <h3>Poster Title</h3>
-                <span class="card-tag">Poster</span>
-            </div>
-        </article>
-
-        <article class="poster">
-            <div class="poster-img">
-                <img src="p.png" alt="Poster 4" loading="lazy"/>
-            </div>
-            <div class="poster-info">
-                <h3>Poster Title</h3>
+                <h3>Kiya Coffee</h3>
                 <span class="card-tag">Poster</span>
             </div>
         </article>
