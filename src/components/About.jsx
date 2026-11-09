@@ -5,15 +5,15 @@ function About (){
 
     <div className="frame">
       <img
-    src="/public/images/photo.jpg"
+    src="photo.JPG"
     alt="Portrait of Eleni"
-    style={{ width: "250px", height: "300px", objectFit: "cover" }}
+    style={{ width: "280px", height: "280px", objectFit: "cover" }}
 />
        
     </div>
 
     <div className="about-content">
-        <h2>About Me</h2>
+        <h2 >About Me</h2>
         <p>I'm a Computer Science student who enjoys solving problems and building websites. I like learning by creating real projects and exploring new technologies.</p>
         <p>Currently, I'm focusing on frontend and backend development and improving my problem-solving skills.</p>
 

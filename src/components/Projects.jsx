@@ -11,7 +11,7 @@ function Projects(){
         <article className="card t1">
             <div className="card-thumb">
                 <div className="ph">Aurum</div>
-                <img src="/public/images/order.jpg" alt="Restaurant Ordering System screenshot" loading="lazy" onerror="this.remove()"/>
+                <img src="/images/order.jpg" alt="Restaurant Ordering System screenshot" loading="lazy" onerror="this.remove()"/>
             </div>
             <div className="card-body">
                 <span className="card-tag">Desktop App</span>
@@ -25,7 +25,7 @@ function Projects(){
         <article className="card t2">
             <div className="card-thumb">
                 <div className="ph">C++</div>
-                <img src="/public/images/job.jpg" alt="Employee Registration System screenshot" loading="lazy" onerror="this.remove()"/>
+                <img src="/images/job.jpg" alt="Employee Registration System screenshot" loading="lazy" onerror="this.remove()"/>
             </div>
             <div className="card-body">
                 <span className="card-tag">Backend Application</span>
@@ -39,7 +39,7 @@ function Projects(){
         <article className="card t3">
             <div className="card-thumb">
                 <div className="ph">Sunrise</div>
-                <img src="/public/images/hotel.jpg" alt="Sunrise Hotel website screenshot" loading="lazy" onerror="this.remove()"/>
+                <img src="/images/hotel.jpg" alt="Sunrise Hotel website screenshot" loading="lazy" onerror="this.remove()"/>
             </div>
             <div className="card-body">
                 <span className="card-tag">Frontend Development</span>
@@ -53,7 +53,7 @@ function Projects(){
         <article className="card t4">
             <div className="card-thumb">
                 <div className="ph">Heran</div>
-                <img src="/public/images/cake.jpg" alt="Heran Cafe website screenshot" loading="lazy" onerror="this.remove()"/>
+                <img src="/images/cake.jpg" alt="Heran Cafe website screenshot" loading="lazy" onerror="this.remove()"/>
             </div>
             <div className="card-body">
                 <span className="card-tag">Frontend Development</span>
