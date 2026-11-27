@@ -1,38 +1,95 @@
+function About() {
+    const technologies = [
+        "HTML/CSS",
+        "JavaScript",
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "Laravel",
+        "Java",
+        "MySQL",
+        "PostgreSQL",
+    ];
 
-function About (){
-    return(
-        <section className="about" id="about">
+    return (
+        <>
+            {/* ORIGINAL: image left + text right (unchanged) */}
+            <section className="about" id="about">
 
-    <div className="frame">
-      <img
-    src="photo.JPG"
-    alt="Portrait of Eleni"
-    style={{ width: "280px", height: "280px", objectFit: "cover" }}
-/>
-       
-    </div>
+                <div className="frame">
+                    <img
+                        src="photo.JPG"
+                        alt="Portrait of Eleni"
+                        style={{
+                            width: "280px",
+                            height: "280px",
+                            objectFit: "cover"
+                        }}
+                    />
+                </div>
 
-    <div className="about-content">
-        <h2 >About Me</h2>
-        <p>I'm a Computer Science student who enjoys solving problems and building websites. I like learning by creating real projects and exploring new technologies.</p>
-        <p>Currently, I'm focusing on frontend and backend development and improving my problem-solving skills.</p>
+                <div className="about-content">
+                    <h2>About Me</h2>
 
-        <div className="about-facts">
-            <div className="fact"><span class="fact-label">Studying</span><span className="fact-value">Computer Science, 3rd year</span></div>
-            <div className="fact"><span class="fact-label">Focus</span><span className="fact-value">Frontend &amp; Backend</span></div>
-            <div className="fact"><span class="fact-label">Also</span><span className="fact-value">Graphic Design</span></div>
-            <div className="fact"><span class="fact-label">Learning</span><span className="fact-value">React</span></div>
-        </div>
+                    <p>
+                        I'm a Computer Science student and Full-Stack Web Developer
+                        passionate about building practical, user-friendly web
+                        applications. I enjoy solving problems, exploring new
+                        technologies, and turning ideas into functional solutions.
+                    </p>
 
-        <div className="about-tags">
-            <span>HTML/CSS</span><span>JavaScript</span><span>Java</span><span>C++</span><span>MySQL</span><span>Laravel</span><span>Adobes Photoshop</span>
-        </div>
+                    <p>
+                        I work with Next.js and Laravel to develop modern web
+                        applications, combining frontend development with
+                        backend functionality. I'm also continuously strengthening
+                        my knowledge of databases, data structures, and
+                        problem-solving.
+                    </p>
 
-     
-        <button className="btn" id="connectBtn">Let's Connect</button>
-    </div>
+                    <div className="about-facts">
+                        <div className="fact">
+                            <span className="fact-label">Education</span>
+                            <span className="fact-value">Computer Science</span>
+                        </div>
 
-</section>
+                        <div className="fact">
+                            <span className="fact-label">Specialization</span>
+                            <span className="fact-value">Full-Stack Development</span>
+                        </div>
+
+                        <div className="fact">
+                            <span className="fact-label">Technologies</span>
+                            <span className="fact-value">Next.js & Laravel</span>
+                        </div>
+
+                        <div className="fact">
+                            <span className="fact-label">Databases</span>
+                            <span className="fact-value">MySQL & PostgreSQL</span>
+                        </div>
+                    </div>
+
+                    <button className="btn" id="connectBtn">
+                        Let's Connect
+                    </button>
+                </div>
+
+            </section>
+
+            {/* NEW: separate block on the bottom */}
+            <section className="tech-section">
+                <h3 className="tech-title">Other Technologies I Use</h3>
+                <p className="tech-text">
+                    The tools and languages I work with to design, build,
+                    and ship web applications.
+                </p>
+
+                <div className="tech-tags">
+                    {technologies.map((tech) => (
+                        <span key={tech}>{tech}</span>
+                    ))}
+                </div>
+            </section>
+        </>
     );
 }
 

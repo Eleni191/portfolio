@@ -686,3 +686,103 @@ body.light-mode, .light-mode body { background: #ffffff; color: #1a2130; }
   .light-mode .links a { border-bottom-color: #d9d5ca; }
   .light-mode .links .links-cv { color: #b9822a; }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Delete your old .about layout (display:flex / grid) and use this */
+.about {
+    display: flex;
+    flex-direction: column;   /* top row, then technologies below */
+    gap: 56px;
+}
+
+/* image LEFT, text RIGHT */
+.about-top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 56px;
+}
+
+.about-top .frame {
+    flex-shrink: 0;
+}
+
+.about-top .about-content {
+    flex: 1;
+}
+
+/* Technologies section */
+.about-tech {
+    width: 100%;
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid rgba(128, 128, 128, 0.25);
+}
+
+.about-tech-title {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+}
+
+.about-tech-title::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 3px;
+    margin: 10px auto 0;
+    border-radius: 2px;
+    background: var(--accent, #6c63ff);
+}
+
+.about-tech-text {
+    max-width: 520px;
+    margin: 12px auto 28px;
+    opacity: 0.75;
+    line-height: 1.6;
+}
+
+.about-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+}
+
+.about-tags span {
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    background: rgba(108, 99, 255, 0.08);
+    border: 1px solid rgba(108, 99, 255, 0.35);
+    transition: transform 0.2s ease, background 0.2s ease,
+                box-shadow 0.2s ease, color 0.2s ease;
+    cursor: default;
+}
+
+.about-tags span:hover {
+    transform: translateY(-4px);
+    background: var(--accent, #6c63ff);
+    color: #fff;
+    box-shadow: 0 8px 18px rgba(108, 99, 255, 0.3);
+}
+
+/* phones: image on top of text */
+@media (max-width: 768px) {
+    .about-top {
+        flex-direction: column;
+        text-align: center;
+    }
+}
