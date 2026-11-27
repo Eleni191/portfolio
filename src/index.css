@@ -744,3 +744,150 @@ body.light-mode, .light-mode body { background: #ffffff; color: #1a2130; }
   .light-mode .links a { border-bottom-color: #d9d5ca; }
   .light-mode .links .links-cv { color: #b9822a; }
 }
+/* ---------- Other Technologies ---------- */
+.tech-section {
+    min-height: auto;
+    width: 100%;
+    text-align: center;
+    padding: 0 60px 20px;
+    background: #1c2538;          /* same as .about, so the two look like one section */
+}
+
+.tech-title {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.tech-title::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 3px;
+    margin: 12px auto 0;
+    border-radius: 2px;
+    background: #d4a24c;
+}
+
+.tech-text {
+    max-width: 520px;
+    margin: 16px auto 30px;
+    color: #9ba3b4;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.tech-tags span {
+    font-size: 13px;
+    font-weight: 600;
+    color: #d4a24c;
+    background: rgba(212, 162, 76, .14);
+    border: 1px solid rgba(212, 162, 76, .5);
+    border-radius: 20px;
+    padding: 8px 18px;
+    cursor: default;
+    transition: transform .15s, background .15s, color .15s, border-color .15s;
+}
+
+.tech-tags span:hover {
+    transform: translateY(-3px);
+    background: #d4a24c;
+    color: #141b29;
+    border-color: #d4a24c;
+}
+
+/* light mode */
+.light-mode .tech-section { background: #ffffff; }
+.light-mode .tech-title::after { background: #b9822a; }
+.light-mode .tech-text { color: #5f6675; }
+.light-mode .tech-tags span {
+    color: #b9822a;
+    background: rgba(185, 130, 42, .12);
+    border-color: rgba(185, 130, 42, .5);
+}
+.light-mode .tech-tags span:hover {
+    background: #b9822a;
+    color: #ffffff;
+    border-color: #b9822a;
+}
+
+@media (max-width: 900px) {
+    .tech-section { padding: 0 30px 30px; }
+}
+
+.about,
+.tech-section {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.about::after,
+.about::before,
+.tech-section::before {
+    display: none;
+}
+
+
+/* ---------- Services (glass cards) ---------- */
+.services .section-heading {
+    margin: 0 auto 50px;
+    text-align: center;
+    padding-bottom: 0;
+}
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: .2em;
+    margin-bottom: 8px;
+}
+
+.svc-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.svc {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 10px;
+    padding: 30px 26px;
+    border-radius: 16px;
+    border: 1px solid #33405c;
+    background: #1c2538;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .25);
+    transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.svc:hover {
+    transform: translateY(-6px);
+    border-color: #d4a24c;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .35);
+}
+
+/* light mode */
+.light-mode .svc {
+    background: #ffffff;
+    border-color: #d9d5ca;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .06);
+}
+.light-mode .svc:hover {
+    background: #ffffff;
+    border-color: #b9822a;
+}
+
+@media (max-width: 1150px) {
+    .svc-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+    .svc-grid { grid-template-columns: 1fr; }
+}

@@ -16,6 +16,17 @@
     outline-offset: 2px;
   }
 }
+.hero-content h1 {
+    font-size: 52px;
+    line-height: 1.15;
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 36px;
+    }
+}
+
 
 .hero {
   position: relative;
